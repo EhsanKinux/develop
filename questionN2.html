@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QN2</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      function elementCreator(elem, callback) {
+        callback(elem);
+      }
+
+      const callback = (elem) => {
+        let pelement = document.createElement(elem);
+        pelement.innerHTML = `This is a test to create element by callback funcrion`;
+        let paragraph = document.querySelector("#container");
+        paragraph.appendChild(pelement);
+      };
+
+      elementCreator("p", callback);
+    </script>
+  </body>
+</html>
