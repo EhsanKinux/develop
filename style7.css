@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.main{
+    display: flex;
+    gap: 20px;
+}
+
+.circle-top{
+    position: absolute;
+    background: rgb(84, 145, 194);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    right: -100px;
+    top: -100px;
+}
+
+.circle-bottom{
+    position: absolute;
+    background: rgb(84, 145, 194);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    left: -100px;
+    top: 400px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 250px;
+    height: 260px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.circle-no{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* border: 1px solid rgb(153, 153, 153); */
+    background-color: #dddddd;
+    position: absolute;
+    top: -25px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card svg{
+    width: 20px;
+    height: 20px;
+    color:rgb(0, 115, 209);
+}
+
+.card h2{
+    font-weight:500;
+}
+.card p{
+    font-size: small;
+    color: slategray;
+}
+
+@media  screen and (max-width: 850px) {
+    .container{
+        width: auto;
+        /* overflow: scroll; */
+        height: auto;
+        padding: 30px;
+
+    }
+    .circle-bottom, .circle-top{
+        display: none;
+    }
+    .main{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
