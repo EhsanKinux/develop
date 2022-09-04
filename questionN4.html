@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <p style="direction: rtl">
+        این یک مخفف برای عبارت Immediately Invoked Function Expression هست.
+        متغیرهایی که توی توابع تعریف میشن، دارای حوزه محلی (Local Scope) هستن.
+        محصور کردن متغیرها توی یک تابع، ۲ خوبی داره:
+        <br />
+        1. متغیرها فقط مخصوص همون تابع یا اسکوپ هستن و از بیرون تابع قابل دسترسی
+        نیستن. یعنی:
+        <br />
+      </p>
+      <code>
+        (function () {
+        <br />
+        const x = 10;
+        <br />
+        })()
+        <br />
+        alert(x); // ReferenceError: x is not defined;
+      </code>
+      <p style="direction: rtl">
+        2. متغیرهای گلوبال اسکوپ دستکاری نمی‌شن. یعنی:
+      </p>
+      <code>
+        const z = 20;
+        <br />
+        (function () {
+        <br />
+        const z = 10;
+        <br />
+        })()
+        <br />
+        alert(z); // 20
+      </code>
+      <p style="direction: rtl">
+        به روش زیر می‌تونیم به این توابع آرگومان پاس بدیم:
+      </p>
+      <code>
+        (function (x, y) {
+        <br />
+        alert(x + y)
+        <br />
+        })(10, 20)
+      </code>
+    </div>
+  </body>
+</html>
